@@ -1,0 +1,29 @@
+{%  extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="m-5">.</div>
+<div class="container mt-5">
+    <form action="" method='post'>
+        {% csrf_token %}
+   
+   <br>
+   <input type="submit"  value="Back" class="btn btn-outline-dark">
+</form>
+</div>
+
+
+<div>
+    {% for j in c %}
+    <h1>{{j}}</h1>
+    <hr>
+        {% for i in j.details_set.all%}
+        {{i}}
+        <br>
+    
+        {% endfor  %}
+    <hr>
+    {% endfor  %}
+</div>
+{% endblock %}
